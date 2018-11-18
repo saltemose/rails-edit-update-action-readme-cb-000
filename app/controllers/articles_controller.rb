@@ -20,7 +20,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit 
-
+    @article.title = params[:title]
+    @article.description = params[:description]
+    @article.save
+    redirect_to article_path(@article)
   end
   # add edit and update methods here
 end
